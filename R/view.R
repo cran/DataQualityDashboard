@@ -1,0 +1,47 @@
+# Copyright 2026 Observational Health Data Sciences and Informatics
+#
+# This file is part of DataQualityDashboard
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#' View DQ Dashboard
+#'
+#' @param jsonPath       The fully-qualified path to the JSON file produced by  \code{\link{executeDqChecks}}
+#' @param launch.browser Passed on to \code{shiny::runApp}
+#' @param display.mode   Passed on to \code{shiny::runApp}
+#' @param ...            Extra parameters for shiny::runApp() like "port" or "host"
+#'
+#' @return NULL (launches Shiny application)
+#'
+#' @importFrom jsonlite toJSON parse_json
+#'
+#' @export
+viewDqDashboard <- function(jsonPath, launch.browser = NULL, display.mode = NULL, ...) {
+  if (!requireNamespace("shiny", quietly = TRUE)) {
+    stop("The 'shiny' package must be installed to use this function. Please install it with: install.packages(\"shiny\")", call. = FALSE)
+  }
+
+  Sys.setenv(jsonPath = jsonPath)
+  appDir <- system.file("shinyApps", package = "DataQualityDashboard")
+
+  if (is.null(display.mode)) {
+    display.mode <- "normal"
+  }
+
+  if (is.null(launch.browser)) {
+    launch.browser <- TRUE
+  }
+
+  shiny::runApp(appDir = appDir, launch.browser = launch.browser, display.mode = display.mode, ...)
+}
