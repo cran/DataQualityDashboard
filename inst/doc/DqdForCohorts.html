@@ -115,7 +115,7 @@ section.footnotes {
 <div class="frontmatter">
 <div class="title"><h1>Running the DQD on a Cohort</h1></div>
 <div class="author"><h2>Clair Blacketer</h2></div>
-<div class="date"><h3>2026-01-24</h3></div>
+<div class="date"><h3>2026-03-22</h3></div>
 </div>
 <div class="body">
 <p>Running the Data Quality Dashboard for a cohort is fairly straightforward. There are two options in the <code>executeDqChecks</code> function, <code>cohortDefinitionId</code> and <code>cohortDatabaseSchema</code>. These options will point the DQD to the schema where the cohort table is located and provide the id of the cohort on which the DQD will be run. By default, the tool assumes that the table being referenced is the standard OHDSI cohort table named <strong>COHORT</strong> with at least the columns <strong>cohort_definition_id</strong> and <strong>subject_id</strong>. For example, if I have a cohort number 123 and the cohort is in the <em>results</em> schema of the <em>IBM_CCAE</em> database, the <code>executeDqChecks</code> function would look like this:</p>
