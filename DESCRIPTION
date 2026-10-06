@@ -1,8 +1,8 @@
 Package: DataQualityDashboard
 Type: Package
 Title: Execute and View Data Quality Checks on OMOP CDM Database
-Version: 2.8.9
-Date: 2026-05-17
+Version: 2.9.0
+Date: 2026-10-05
 Authors@R: c(
   person("Katy", "Sadowski", email = "sadowski@ohdsi.org", role = c("aut", "cre")),
   person("Clair", "Blacketer", role = c("aut")),
@@ -37,6 +37,6 @@ Suggests: testthat, knitr, rmarkdown, markdown, shiny, ggplot2, Eunomia
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2026-05-18 00:58:09 UTC; katysadowski
+Packaged: 2026-10-06 23:24:41 UTC; katysadowski
 Repository: CRAN
-Date/Publication: 2026-05-18 07:00:23 UTC
+Date/Publication: 2026-10-06 23:50:07 UTC
